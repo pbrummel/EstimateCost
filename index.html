@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Estimate Cost</title>
+        <script src="estimateCost.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h1 id="howMuch">How Much Does It Cost to Build a House?</h1>
+        <h2>Single story or Two story?</h2>
+        <div class="homes">
+            <img src="images/single.png" alt="picture of single story house">
+            <img src="images/double.png" alt="picture of double story house">
+        </div>
+        <div class="clear" id="storyID">
+            <input id="single" type="radio" name="Stories" value="Single"/></input>
+            <label for="single">Single Story</label>
+            <input id="double" type="radio" name="Stories" value="Double"/></input>
+            <label for="double">Two Story</label>
+        </div>
+        <hr />
+
+        <h2>Color:</h2>
+        <div class="colors">
+          <label for="colorSelection">What color do you want your house to be? (click and choose)</label>
+          <input type="color" id="colorSelection" name="color" value="#ff0000">
+        </div>
+        <hr />
+
+        <h2>Exterior Material:</h2>
+        <div class="materials" id="materialSelection">
+            <input type="image" id="brick" onclick="selectBrick(this.id)" value="brick" src="images/brick.png">
+            <input type="image" id="stucco" onclick="selectStucco(this.id)" value="stucco" src="images/stucco.png">
+            <input type="image" id="stone" onclick="selectStone(this.id)" value="stone" src="images/stone.png">
+            <input type="image" id="vinyl" onclick="selectVinyl(this.id)" value="vinyl" src="images/vinyl.png">
+            <input type="image" id="wood" onclick="selectWood(this.id)" value="wood" src="images/wood.png">
+        </div>
+        <p id="currentOutput">Current selection:</p>
+        <hr />
+
+        <div id="footer">
+        <h2>Square Footage:</h2>
+        <input type="text" id="sqft" name="sqft" value="" placeholder="Enter square footage">
+
+        <h2>Garage Size (# of vehicles):<h2>
+            <select id="garage">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+        </div>
+
+        <div class="estimate">
+            <button type="button" onclick="getEstimate()">Get Detailed Estimate</button>
+        </div>
+        <div id="result"></div>
+    </body>
+</html>
