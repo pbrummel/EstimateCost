@@ -51,13 +51,9 @@ const getEstimate = () => {
     let totalCost = 0;
 
     // Determine story selection
-    for (i = 0 ; i < storySelection.length; i++) {
-        if (storySelection[i].type="radio") {
-            if (storySelection[i].checked) {
-                storedValue = storySelection[i].value;
-            }
-        }
-    }
+    const selectedRadio = document.querySelector('input[name="Stories"]:checked');
+    const storedValue = selectedRadio ? selectedRadio.value : null;
+
 
     // Determine cost of story selection
     if (storedValue === "Single") {
@@ -136,3 +132,4 @@ const getEstimate = () => {
     h1.appendChild(ul)
     document.body.appendChild(h1);
 }
+
